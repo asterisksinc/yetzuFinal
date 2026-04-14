@@ -30,12 +30,12 @@ export default function AdminSidebar() {
                 
                 const isActive = pathname === item.path
                 return(
-                    <Link className={`flex items-center gap-3 px-4 py-2 text-[14px] ${ isActive ? "bg-gray-200 w-full font-medium rounded-lg" : "text-[#404040] hover:bg-gray-200 w-full rounded-lg"} `} href={item.path} key={item.name}> <Image width={20} height={20} src={item.icon}/> {item.name}</Link>
+                    <Link className={`flex items-center gap-3 px-4 py-2 text-[14px] ${ isActive ? "bg-gray-200 w-full font-medium rounded-lg" : "text-[#404040] hover:bg-gray-200 w-full rounded-lg"} `} href={item.path} key={item.name}> <Image width={20} height={20} src={item.icon} alt="drop"/> {item.name}</Link>
                 )
             })}
         </div>
     </div>
   )
 
-{/* <span className={`font-normal text-[14px]`}>{item.name}</span> */}
+
 }

@@ -68,10 +68,6 @@ const config: Config = {
           700: "var(--color-success-700)",
         },
       },
-      fontFamily: {
-        inter: "var(--font-inter)",
-        sfpro: "var(--font-sfpro)",
-      },
       fontSize: {
         h1: [
           "var(--h1-size)",
