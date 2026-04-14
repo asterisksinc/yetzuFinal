@@ -146,7 +146,7 @@ export default function LoginForm() {
               </Link>
             </div>
 
-            <Button variant="primary" disabled={!isValid || !dirty || isPending} loading={isPending}>
+            <Button variant="primary" type="submit" disabled={!isValid || !dirty || isPending} loading={isPending}>
               Log In
             </Button>
 

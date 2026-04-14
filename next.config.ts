@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/api/proxy/:path*",
-        destination: "https://productionyetzuapi.yetzu.com/api/:path*",
+        destination: "https://productionyetzuapi.yetzu.com/:path*",
       },
     ];
   },

@@ -57,13 +57,15 @@ const useLoginMutation = (): UseMutationResult<
   return useMutation<LoginResponse, unknown, LoginPayload>({
     mutationFn: identityService.login,
     onSuccess: (data, variables) => {
-      Cookies.set("jwtToken", data.userData.jwtToken, { expires: 1 });
-      if (variables?.rememberMe) {
-        Cookies.set("refreshToken", data.userData.refresh_token, {
-          expires: 7,
-        });
+      if (data?.userData?.jwtToken) {
+        Cookies.set("jwtToken", data.userData.jwtToken, { expires: 1 });
+        if (variables?.rememberMe) {
+          Cookies.set("refreshToken", data.userData.refresh_token, {
+            expires: 7,
+          });
+        }
+        queryClient.invalidateQueries({ queryKey: ["getUserProfile"] });
       }
-      queryClient.invalidateQueries({ queryKey: ["getUserProfile"] });
     },
   });
 };
@@ -77,8 +79,10 @@ const useGoogleLoginMutation = (): UseMutationResult<
   return useMutation<LoginResponse, unknown, { idToken: string }>({
     mutationFn: ({ idToken }) => identityService.googleLogin(idToken),
     onSuccess: (data) => {
-      Cookies.set("jwtToken", data.userData.jwtToken, { expires: 1 });
-      Cookies.set("refreshToken", data.userData.refresh_token, { expires: 7 });
+      if (data?.userData?.jwtToken) {
+        Cookies.set("jwtToken", data.userData.jwtToken, { expires: 1 });
+        Cookies.set("refreshToken", data.userData.refresh_token, { expires: 7 });
+      }
       queryClient.invalidateQueries({ queryKey: ["getUserProfile"] });
     },
   });
