@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/api/proxy/:path*",
-        destination: "https://productionyetzuapi.yetzu.com/api/:path*",
+        destination: "https://productionyetzuapi.yetzu.com/:path*",
       },
     ];
   },
@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
         hostname: "157.173.220.125",
       },
     ],
-    unoptimized: true, // Important if you serve static images from public/
+    unoptimized: true, // Important if you serve static images from public
   },
   outputFileTracingRoot: __dirname, // Fix Next.js workspace root warning
 };

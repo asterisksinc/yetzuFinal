@@ -8,7 +8,7 @@ const protectedRoutes = [
   "/account",
   "/home",
   // "/s",
-  "/a",
+  "/a/",
   // "/e",
 ];
 
@@ -58,7 +58,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|images|api/public|admin-dashboard).*)",
-  ],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|images|api/public/admin-).*)"],
 };
