@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import AdminSidebar from "./components/AdminSideBar";
 import AdminHeader from "./components/AdminHeader";
+import { div } from "framer-motion/client";
 
 export default function AdminDashLayout({
   children,
@@ -10,10 +11,19 @@ export default function AdminDashLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <div className="h-screen flex flex-col">
       <AdminHeader />
-      <AdminSidebar />
-      <div>{children}</div>
+
+      <div className="flex flex-1">
+
+        <AdminSidebar />
+
+        <main className="flex-1 overflow-y-auto">
+          {children}
+        </main>
+
+      </div>
+
     </div>
   );
 }

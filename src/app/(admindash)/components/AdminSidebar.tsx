@@ -22,7 +22,7 @@ export default function AdminSidebar() {
 
     
     return (
-        <aside className='w-62 h-screen bg-white border-r p-5 border-gray-200'>
+        <div className='w-62 h-screen bg-white border-r p-5 border-gray-200'>
 
         <div className='flex flex-col items-start gap-4 '>
             
@@ -34,7 +34,7 @@ export default function AdminSidebar() {
                 )
             })}
         </div>
-    </aside>
+    </div>
   )
 
 {/* <span className={`font-normal text-[14px]`}>{item.name}</span> */}

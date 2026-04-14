@@ -3,7 +3,7 @@ import React from "react";
 
 export default function AdminHeader() {
     return (
-        <header className="w-full border-b border-gray-200 flex items-center justify-between p-4">
+        <div className="w-full border-b border-gray-200 flex items-center justify-between p-4">
             <div>
                 <Image width={120} height={120} src="/logo-Yetzu.svg" />
             </div>
@@ -33,6 +33,6 @@ export default function AdminHeader() {
                     <img src="/admin-dashboard/ad-drop-down.svg" alt="dropdown-icon" />
                 </div>
             </div>
-        </header>
+        </div>
     );
 }
